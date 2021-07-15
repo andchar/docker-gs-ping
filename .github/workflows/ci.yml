@@ -15,7 +15,9 @@ jobs:
           go-version: 1.16.4
 
       - name : TEST Print temp directory
-        run: tree /home/runner/work/_temp
+        run: | 
+          file /home/runner/work/_temp/* 
+          ls -lah /home/runner/work/_temp
 
       - name: Checkout code
         uses: actions/checkout@v2
