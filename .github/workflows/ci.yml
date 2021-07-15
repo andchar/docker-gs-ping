@@ -3,7 +3,7 @@ name: Run CI
 on:
   push:
     branches: [ main ]
-  #workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   build-and-test:
@@ -13,6 +13,8 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: 1.16.4
+      - name : TEST Print temp directory
+        run: ls /home/runner/work/_temp
 
       - name: Checkout code
         uses: actions/checkout@v2
